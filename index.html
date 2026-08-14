@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Japão 2027</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="map-stage" aria-hidden="true">
+      <svg id="japan-map" viewBox="40 10 720 760" preserveAspectRatio="xMidYMid meet"></svg>
+    </div>
+
+    <aside class="countdown" aria-label="Contagem até a viagem">
+      <span><b id="cd-days">—</b><small>dias</small></span>
+      <span><b id="cd-hours">—</b><small>horas</small></span>
+      <span><b id="cd-mins">—</b><small>min</small></span>
+      <span><b id="cd-secs">—</b><small>seg</small></span>
+    </aside>
+
+    <nav class="nav-dots" id="nav-dots" aria-label="Pontos do roteiro"></nav>
+
+    <main class="content">
+      <section class="hero">
+        <div class="hero-card">
+          <p class="kicker">Uma viagem entre amigos</p>
+          <h1>Japão<span class="jp">日本へ</span></h1>
+          <p class="lede">
+            31 de março de 2027. Osaka acende primeiro, Kumamoto puxa para o sul,
+            Quioto devolve o ritmo, os Alpes atravessam o teto do país, e Tóquio
+            fecha o mapa. Role para percorrer o rascunho.
+          </p>
+          <div class="stamp">31 mar — 19 abr · 2027</div>
+          <p class="scroll-hint">Desça o roteiro</p>
+        </div>
+      </section>
+
+      <div id="stops"></div>
+
+      <section class="finale">
+        <article class="finale-card">
+          <p class="kicker">Até lá</p>
+          <h2>O mapa ainda está vivo<span class="jp">続き</span></h2>
+          <p>
+            Isso é um esboço: fotos de referência, textos para trocar, e os
+            “preencher” do Excel ainda à vista. O countdown no canto segue até
+            a meia-noite do dia 31 no Japão. Quando o roteiro mudar, a página
+            muda junto.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <div class="grain"></div>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
