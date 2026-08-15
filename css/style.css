@@ -48,13 +48,12 @@ button {
 
 .map-stage {
   position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 58%;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 55%, #18140f 0%, transparent 72%),
+    radial-gradient(ellipse 70% 55% at 38% 52%, #16130f 0%, transparent 70%),
     var(--void);
 }
 
@@ -62,33 +61,295 @@ button {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, transparent 62%, var(--void) 100%);
+  background:
+    linear-gradient(90deg, transparent 58%, rgba(7, 7, 6, 0.18) 82%, rgba(7, 7, 6, 0.4) 100%),
+    radial-gradient(ellipse 90% 80% at 42% 50%, transparent 62%, rgba(7, 7, 6, 0.35) 100%);
   pointer-events: none;
 }
 
 .map-stage svg {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   display: block;
 }
 
-.island {
-  fill: #1b1915;
-  stroke: #3a342c;
-  stroke-width: 1.1;
-  transition: fill 0.7s ease, stroke 0.7s ease, filter 0.7s ease;
+.bathy {
+  fill: none;
+  stroke: #2a241c;
+  stroke-width: 0.8;
 }
 
-.island.is-lit {
-  fill: #7a4228;
-  stroke: var(--gold-2);
+.bathy-0 { opacity: 0.9; }
+.bathy-1 { opacity: 0.55; }
+.bathy-2 { opacity: 0.3; }
+
+.graticule {
+  stroke: #2c261e;
+  stroke-width: 0.45;
+  stroke-dasharray: 3 5;
+}
+
+.graticule-fine {
+  stroke-width: 0.28;
+  stroke-dasharray: 1.5 6;
+  opacity: 0.55;
+}
+
+.grid-label {
+  fill: #4a4338;
+  font-size: 7px;
+  font-family: var(--sans);
+  letter-spacing: 0.06em;
+}
+
+.island {
+  fill: rgba(29, 26, 22, 0.88);
+  stroke: none;
+  transition: fill 0.7s ease;
+}
+
+.island-outline {
+  fill: none;
+  stroke: #5a5246;
+  stroke-width: 1.2;
+  pointer-events: none;
+}
+
+.island-hatch {
+  fill: url(#hatch);
+  stroke: none;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.region {
+  fill: rgba(255, 214, 160, 0.05);
+  stroke: none;
+  pointer-events: none;
+  transition: fill 0.7s ease, filter 0.7s ease;
+}
+
+.region-hokkaido { fill: rgba(110, 130, 140, 0.11); }
+.region-tohoku { fill: rgba(120, 150, 148, 0.13); }
+.region-kanto { fill: rgba(196, 120, 72, 0.14); }
+.region-chubu { fill: rgba(150, 118, 72, 0.14); }
+.region-kansai { fill: rgba(196, 92, 62, 0.14); }
+.region-chugoku { fill: rgba(120, 108, 88, 0.13); }
+.region-shikoku { fill: rgba(100, 128, 112, 0.12); }
+.region-kyushu { fill: rgba(140, 100, 70, 0.12); }
+
+.region.is-lit {
+  fill: rgba(122, 66, 40, 0.82);
   filter: url(#glow);
+}
+
+.region-border {
+  fill: none;
+  stroke: #c4a57a;
+  stroke-width: 1.05;
+  stroke-dasharray: 5 3.5;
+  stroke-linecap: round;
+  opacity: 0.72;
+}
+
+.prefecture-line {
+  fill: none;
+  stroke: #6a5a48;
+  stroke-width: 0.45;
+  stroke-dasharray: 2 2.5;
+  opacity: 0.45;
+}
+
+.region-label {
+  fill: #8a7d68;
+  font-family: var(--display);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  opacity: 0.72;
+  text-anchor: middle;
+  pointer-events: none;
+  transition: fill 0.5s ease, opacity 0.5s ease;
+}
+
+.region-label-en {
+  font-family: var(--sans);
+  font-size: 6.5px;
+  letter-spacing: 0.18em;
+}
+
+.region-label.is-on {
+  fill: var(--gold-2);
+  opacity: 1;
+}
+
+.islet {
+  fill: #1d1a16;
+  stroke: #4a4338;
+  stroke-width: 0.9;
+  transition: fill 0.7s ease, stroke 0.7s ease;
+}
+
+.islet.is-lit {
+  fill: #8a4c2e;
+  stroke: var(--gold-2);
+}
+
+.lake {
+  fill: #121820;
+  stroke: #3a4a55;
+  stroke-width: 0.55;
+}
+
+.river {
+  fill: none;
+  stroke: #3a4a55;
+  stroke-width: 0.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.55;
+}
+
+.range {
+  fill: none;
+  stroke: #5a4a38;
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.7;
+}
+
+.peak {
+  fill: #6a5040;
+  stroke: #c4a57a;
+  stroke-width: 0.55;
+  opacity: 0.85;
+}
+
+.peak-fuji {
+  fill: #8a6a55;
+  stroke: var(--gold-2);
+}
+
+.peak-label {
+  fill: #8a7a68;
+  font-family: var(--display);
+  font-size: 6px;
+  letter-spacing: 0.12em;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.link {
+  fill: none;
+  stroke: #8a7a62;
+  stroke-width: 0.7;
+  opacity: 0.55;
+}
+
+.sea-label {
+  fill: #5a5348;
+  font-family: var(--display);
+  letter-spacing: 0.28em;
+  opacity: 0.5;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.sea-lg { font-size: 10px; }
+.sea-md { font-size: 8px; letter-spacing: 0.2em; }
+.sea-sm { font-size: 6px; letter-spacing: 0.16em; opacity: 0.45; }
+
+.town {
+  fill: #6a6256;
+  opacity: 0.6;
+}
+
+.town-label {
+  fill: #6a6256;
+  font-family: var(--sans);
+  font-size: 5.5px;
+  letter-spacing: 0.04em;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.compass {
+  position: absolute;
+  left: 28px;
+  bottom: 28px;
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(212, 175, 119, 0.35);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--gold);
+  font-family: var(--display);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  background: rgba(7, 7, 6, 0.35);
+}
+
+.compass i {
+  position: absolute;
+  width: 2px;
+  height: 18px;
+  background: linear-gradient(var(--ember), var(--gold));
+  top: 8px;
+  border-radius: 1px;
+}
+
+.compass span {
+  position: relative;
+  top: -16px;
+}
+
+.map-key {
+  position: absolute;
+  left: 96px;
+  bottom: 22px;
+  margin: 0;
+  padding: 8px 12px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 14px;
+  background: rgba(7, 7, 6, 0.42);
+  border: 1px solid rgba(212, 175, 119, 0.22);
+  backdrop-filter: blur(8px);
+}
+
+.map-key li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  color: #7a7164;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  line-height: 1.55;
+  transition: color 0.4s ease;
+}
+
+.map-key b {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: #9a8f7c;
+  min-width: 3.6em;
+}
+
+.map-key li.is-on,
+.map-key li.is-on b {
+  color: var(--gold-2);
 }
 
 .route {
   fill: none;
   stroke: rgba(212, 175, 119, 0.18);
-  stroke-width: 2;
+  stroke-width: 1.35;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -96,7 +357,7 @@ button {
 .route-draw {
   fill: none;
   stroke: var(--gold);
-  stroke-width: 2.4;
+  stroke-width: 1.55;
   stroke-linecap: round;
   stroke-linejoin: round;
   filter: url(#glow-gold);
@@ -110,13 +371,13 @@ button {
 }
 
 .pin-glow.is-on {
-  opacity: 0.42;
+  opacity: 0.38;
 }
 
 .pin-ring {
   fill: none;
   stroke: var(--gold-2);
-  stroke-width: 1.4;
+  stroke-width: 0.9;
   opacity: 0;
   transform-box: fill-box;
   transform-origin: center;
@@ -129,7 +390,7 @@ button {
 .pin {
   fill: #5c564c;
   stroke: #120f0c;
-  stroke-width: 1.4;
+  stroke-width: 0.85;
   transition: fill 0.4s ease;
 }
 
@@ -143,18 +404,18 @@ button {
 
 @keyframes ring {
   0% {
-    r: 7;
+    r: 4;
     opacity: 0.85;
   }
   100% {
-    r: 26;
+    r: 14;
     opacity: 0;
   }
 }
 
 .pin-label {
   font-family: var(--display);
-  font-size: 11px;
+  font-size: 8.5px;
   fill: var(--muted);
   opacity: 0;
   transition: opacity 0.4s ease, fill 0.4s ease;
@@ -241,28 +502,35 @@ button {
 .content {
   position: relative;
   z-index: 10;
-  margin-left: 50%;
-  padding: 0 6vw 20vh 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0 5vw 20vh;
 }
 
 .hero,
 .stop,
-.finale {
+.retorno {
   min-height: 100vh;
   display: flex;
   align-items: center;
   padding: 12vh 0;
 }
 
+.hero,
+.retorno {
+  align-self: stretch;
+  justify-content: flex-start;
+}
+
 .hero-card,
-.card,
-.finale-card {
+.card {
   width: min(520px, 100%);
   padding: 32px 32px 28px;
   background: var(--paper);
   border: 1px solid var(--paper-border);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
 }
 
 .kicker {
@@ -274,8 +542,7 @@ button {
 }
 
 .hero h1,
-.card h2,
-.finale h2 {
+.card h2 {
   margin: 0;
   font-family: var(--display);
   font-weight: 700;
@@ -296,8 +563,7 @@ button {
 }
 
 .lede,
-.card p,
-.finale p {
+.card p {
   margin: 16px 0 0;
   color: #d8ccb6;
   line-height: 1.7;
@@ -336,12 +602,193 @@ button {
 
 .places li {
   position: relative;
-  padding: 6px 0 6px 18px;
+  padding: 0;
   color: var(--gold-2);
   font-size: 0.92rem;
 }
 
-.places li::before {
+.place-btn {
+  width: 100%;
+  text-align: left;
+  padding: 8px 28px 8px 18px;
+  color: var(--gold-2);
+  border-radius: 2px;
+  position: relative;
+}
+
+.place-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 7px;
+  height: 1px;
+  background: var(--ember);
+}
+
+.place-btn::after {
+  content: "→";
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.place-btn:hover,
+.place-btn:focus-visible {
+  background: rgba(212, 175, 119, 0.08);
+  color: var(--gold-2);
+}
+
+.place-btn.is-extra {
+  margin-top: 8px;
+  color: var(--ember);
+  font-weight: 500;
+}
+
+.place-btn.is-draft {
+  opacity: 0.78;
+}
+
+.place-modal {
+  width: min(560px, calc(100vw - 32px));
+  max-height: min(82vh, 720px);
+  padding: 0;
+  border: 1px solid var(--paper-border);
+  background: #14110e;
+  color: var(--ink);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+}
+
+.place-modal::backdrop {
+  background: rgba(7, 7, 6, 0.62);
+}
+
+.place-modal article {
+  padding: 28px 28px 24px;
+}
+
+.place-modal header {
+  position: relative;
+  padding-right: 88px;
+}
+
+.place-modal h3 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 1.7rem;
+  line-height: 1.2;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 6px 10px;
+  border: 1px solid var(--paper-border);
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+}
+
+.modal-close:hover,
+.modal-close:focus-visible {
+  color: var(--gold-2);
+  border-color: var(--gold);
+}
+
+.modal-body {
+  margin-top: 18px;
+}
+
+.modal-photo {
+  margin: 0 0 18px;
+  position: relative;
+  overflow: hidden;
+  background: #1c1914;
+}
+
+.modal-photo img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  filter: saturate(0.88) contrast(1.05);
+}
+
+.modal-photo figcaption {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  padding: 2px 7px;
+  background: rgba(7, 7, 6, 0.7);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.fact {
+  padding: 10px 12px;
+  border: 1px solid rgba(212, 175, 119, 0.16);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.fact span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--gold);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.fact b {
+  font-weight: 500;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.fact.is-empty b,
+.empty {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.modal-block {
+  margin-top: 18px;
+}
+
+.modal-block h4 {
+  margin: 0 0 8px;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.modal-block ul,
+.indicacoes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.modal-block li,
+.indicacoes li {
+  padding: 6px 0 6px 14px;
+  position: relative;
+  color: #d8ccb6;
+}
+
+.modal-block li::before,
+.indicacoes li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -349,6 +796,21 @@ button {
   width: 7px;
   height: 1px;
   background: var(--ember);
+}
+
+.indicacoes strong {
+  display: block;
+  color: var(--gold-2);
+}
+
+.indicacoes p {
+  margin: 4px 0 0;
+  color: #d8ccb6;
+}
+
+.modal-block p {
+  margin: 0;
+  line-height: 1.65;
 }
 
 .photos {
@@ -407,18 +869,25 @@ button {
 
 @media (max-width: 860px) {
   .content {
-    margin-left: 0;
-    padding: 42vh 5vw 12vh;
-  }
-
-  .map-stage {
-    width: 100%;
-    height: 40vh;
-    bottom: auto;
+    align-items: stretch;
+    padding: 18vh 5vw 12vh;
   }
 
   .map-stage::after {
-    background: linear-gradient(180deg, transparent 45%, var(--void) 100%);
+    background:
+      linear-gradient(180deg, transparent 20%, rgba(7, 7, 6, 0.55) 70%, rgba(7, 7, 6, 0.78) 100%);
+  }
+
+  .map-stage svg {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+  }
+
+  .compass,
+  .map-key {
+    display: none;
   }
 
   .nav-dots {
@@ -445,13 +914,17 @@ button {
 
   .hero,
   .stop,
-  .finale {
+  .retorno {
     min-height: auto;
     padding: 8vh 0;
   }
 
   .photos {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .facts {
+    grid-template-columns: 1fr;
   }
 }
 

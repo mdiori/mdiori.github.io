@@ -14,7 +14,12 @@
   </head>
   <body>
     <div class="map-stage" aria-hidden="true">
-      <svg id="japan-map" viewBox="40 10 720 760" preserveAspectRatio="xMidYMid meet"></svg>
+      <svg id="japan-map" viewBox="-30 -40 760 880" preserveAspectRatio="xMinYMid slice"></svg>
+      <div class="compass">
+        <span>N</span>
+        <i></i>
+      </div>
+      <ul class="map-key" id="map-key"></ul>
     </div>
 
     <aside class="countdown" aria-label="Contagem até a viagem">
@@ -32,10 +37,7 @@
           <p class="kicker">Uma viagem entre amigos</p>
           <h1>Japão<span class="jp">日本へ</span></h1>
           <p class="lede">
-            31 de março de 2027, pelo calendário brasileiro. Osaka acende
-            primeiro, Kumamoto puxa para o sul, Quioto devolve o ritmo, os Alpes
-            atravessam o teto do país, e Tóquio fecha o mapa no dia 22 de abril,
-            pelo calendário japonês. Role para percorrer o rascunho.
+            31 de março de 2027 é a saída do Brasil.
           </p>
           <div class="stamp">31 mar — 22 abr · 2027</div>
           <p class="scroll-hint">Desça o roteiro</p>
@@ -44,20 +46,30 @@
 
       <div id="stops"></div>
 
-      <section class="finale">
-        <article class="finale-card">
-          <p class="kicker">Até lá</p>
-          <h2>O mapa ainda está vivo<span class="jp">続き</span></h2>
-          <p>
-            Isso é um esboço: fotos de referência, textos para trocar, e os
-            “preencher” do Excel ainda à vista. O countdown no canto segue até
-            a meia-noite do dia 31 no Brasil. No dia 22, pelo calendário
-            japonês, a gente vai embora. Quando o roteiro mudar, a página
-            muda junto.
+      <section class="hero retorno">
+        <div class="hero-card">
+          <p class="kicker">De volta</p>
+          <h1>Brasil<span class="jp">帰国</span></h1>
+          <p class="lede">
+            22 de abril de 2027 é o retorno ao Brasil.
           </p>
-        </article>
+          <div class="stamp">22 abr · calendário japonês</div>
+        </div>
       </section>
     </main>
+
+    <dialog class="place-modal" id="place-modal" aria-labelledby="modal-title">
+      <article>
+        <header>
+          <p class="kicker" id="modal-kicker"></p>
+          <h3 id="modal-title"></h3>
+          <button type="button" class="modal-close" id="modal-close" aria-label="Fechar">
+            Fechar
+          </button>
+        </header>
+        <div class="modal-body" id="modal-body"></div>
+      </article>
+    </dialog>
 
     <div class="grain"></div>
     <script src="js/data.js"></script>
