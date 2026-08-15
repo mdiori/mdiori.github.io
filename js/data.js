@@ -1,4 +1,4 @@
-const TRIP_START = "2027-03-31T00:00:00+09:00";
+const TRIP_START = "2027-03-31T00:00:00-03:00";
 
 const ISLANDS = {
   hokkaido: [
@@ -57,12 +57,12 @@ const STOPS = [
       "A viagem começa no neon. Universal no primeiro dia, depois o aquário, o templo mais antigo do Japão, a torre de Tsūtenkaku e o caos gostoso de Dōtonbori. No terceiro dia sobe o castelo e o Umeda Sky. O quarto dia ainda está em branco — e tudo bem.",
     photos: [
       {
-        src: "https://images.unsplash.com/photo-1590559899731-a382839e5549?auto=format&fit=crop&w=1200&q=70",
+        src: "images/kansai/osaka-dotonbori.jpg",
         alt: "Luzes de Dōtonbori à noite",
         caption: "Dōtonbori",
       },
       {
-        src: "https://images.unsplash.com/photo-1578469645742-46cae010e5d4?auto=format&fit=crop&w=1200&q=70",
+        src: "images/kansai/osaka-castle.jpg",
         alt: "Castelo de Osaka",
         caption: "Castelo de Osaka",
       },
@@ -81,12 +81,12 @@ const STOPS = [
       "Um pulo ao lado. Porto, colinas e carne famosa demais para a gente fingir que não vai comer. Akashi ficou como um talvez no roteiro — se der, a gente desvia; se não der, Kobe já basta.",
     photos: [
       {
-        src: "https://images.unsplash.com/photo-1578271886192-e55ddd04e2c4?auto=format&fit=crop&w=1200&q=70",
+        src: "images/kansai/kobe-port.jpg",
         alt: "Porto de Kobe ao entardecer",
         caption: "Porto de Kobe",
       },
       {
-        src: "https://images.unsplash.com/photo-1604928146748-3361a6a1f2c6?auto=format&fit=crop&w=1200&q=70",
+        src: "images/kansai/kobe-city.jpg",
         alt: "Ruas de Kobe",
         caption: "A cidade",
       },
@@ -105,12 +105,12 @@ const STOPS = [
       "O castelo que parece flutuar. Himeji é o retrato clássico de um shiro japonês — branco, intacto, impossível de ignorar. Um desvio curto no caminho para o oeste.",
     photos: [
       {
-        src: "https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?auto=format&fit=crop&w=1200&q=70",
+        src: "images/chugoku/himeji-castle.jpg",
         alt: "Castelo de Himeji",
         caption: "Garça Branca",
       },
       {
-        src: "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=1200&q=70",
+        src: "images/kansai/cherry-blossoms.jpg",
         alt: "Cerejeiras no Japão",
         caption: "Início de abril",
       },
@@ -129,12 +129,12 @@ const STOPS = [
       "O mesmo dia continua para Okayama. Kibitsu Jinja guarda um dos corredores de madeira mais longos do Japão — um santuário que a gente escolheu de propósito, não por estar no folder.",
     photos: [
       {
-        src: "https://images.unsplash.com/photo-1528164344705-47542687000d?auto=format&fit=crop&w=1200&q=70",
+        src: "images/chugoku/shrine.jpg",
         alt: "Santuário japonês",
         caption: "Kibitsu Jinja",
       },
       {
-        src: "https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=1200&q=70",
+        src: "images/chugoku/okayama-street.jpg",
         alt: "Rua tradicional no Japão",
         caption: "Okayama",
       },
@@ -157,12 +157,12 @@ const STOPS = [
       "O salto para o sul. Dois dias em Kyūshū: vulcão (Aso ou Unzen), estátuas, e o castelo. É o ponto mais longe do resto do roteiro — o mapa acende inteiro embaixo, e a gente some um pouco do Honshu.",
     photos: [
       {
-        src: "https://images.unsplash.com/photo-1578271887550-6966a0462d14?auto=format&fit=crop&w=1200&q=70",
+        src: "images/kyushu/kumamoto-volcano.jpg",
         alt: "Paisagem vulcânica no Japão",
         caption: "Aso / Unzen",
       },
       {
-        src: "https://images.unsplash.com/photo-1590253230532-a67ca1978958?auto=format&fit=crop&w=1200&q=70",
+        src: "images/kyushu/kumamoto-castle.jpg",
         alt: "Castelo japonês",
         caption: "Kumamoto",
       },
@@ -181,12 +181,12 @@ const STOPS = [
       "Volta ao Kansai, agora no ritmo certo. Dois dias de Quioto com o castelo no centro do rascunho — Fushimi, Arashiyama, Gion e o que mais couber vão entrar aqui com o tempo.",
     photos: [
       {
-        src: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=70",
+        src: "images/kansai/fushimi-inari.jpg",
         alt: "Torii de Fushimi Inari",
         caption: "Fushimi Inari",
       },
       {
-        src: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=1200&q=70",
+        src: "images/kansai/kyoto-temple.jpg",
         alt: "Templo em Quioto",
         caption: "Quioto",
       },
@@ -205,12 +205,12 @@ const STOPS = [
       "Um dia só para Nara. Veados no parque, Tōdai-ji se a gente chegar cedo, e a sensação de que o Japão antigo ainda cabe numa tarde.",
     photos: [
       {
-        src: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1200&q=70",
+        src: "images/kansai/nara-temple.jpg",
         alt: "Templo em Nara",
         caption: "Nara",
       },
       {
-        src: "https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?auto=format&fit=crop&w=900&q=60",
+        src: "images/chugoku/himeji-castle.jpg",
         alt: "Paisagem tradicional",
         caption: "Kansai",
       },
@@ -229,12 +229,12 @@ const STOPS = [
       "Volta para fechar o que ficou. No rascunho isso se chama só “Nova Quioto”: o dia extra para não sair da cidade com a sensação de que a gente correu.",
     photos: [
       {
-        src: "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=1200&q=70",
+        src: "images/kansai/cherry-blossoms.jpg",
         alt: "Cerejeiras em Quioto",
         caption: "Ainda Quioto",
       },
       {
-        src: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=900&q=60",
+        src: "images/kansai/fushimi-inari.jpg",
         alt: "Caminho de torii",
         caption: "O que faltar",
       },
@@ -253,12 +253,12 @@ const STOPS = [
       "Sobe para as montanhas. Takayama é rua de madeira, manhã fria e a porta dos Alpes. No roteiro está escrito “tudo” — o que, neste caso, é o elogio certo.",
     photos: [
       {
-        src: "https://images.unsplash.com/photo-1528164344705-47542687000d?auto=format&fit=crop&w=900&q=70",
+        src: "images/chugoku/shrine.jpg",
         alt: "Rua tradicional nas montanhas",
         caption: "Takayama",
       },
       {
-        src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=70",
+        src: "images/alpes/alps.jpg",
         alt: "Montanhas",
         caption: "Alpes japoneses",
       },
@@ -277,12 +277,12 @@ const STOPS = [
       "A travessia. Em abril o corredor de neve da Alpine Route ainda está de pé — ônibus, funicular, e a sensação de atravessar o Japão pelo teto. No fim do dia, Nagano.",
     photos: [
       {
-        src: "https://images.unsplash.com/photo-1483921020237-2ff51e8f4a22?auto=format&fit=crop&w=1200&q=70",
+        src: "images/alpes/alpine-route.jpg",
         alt: "Montanhas com neve",
         caption: "Alpine Route",
       },
       {
-        src: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=1200&q=70",
+        src: "images/alpes/alpine-snow.jpg",
         alt: "Paisagem alpina",
         caption: "Neve em abril",
       },
@@ -301,12 +301,12 @@ const STOPS = [
       "Chegada sem lista rígida. Templo Zenko-ji se couber, um jantar quente, e dormir antes de descer para Tóquio.",
     photos: [
       {
-        src: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=900&q=70",
+        src: "images/kansai/nara-temple.jpg",
         alt: "Templo no interior do Japão",
         caption: "Nagano",
       },
       {
-        src: "https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?auto=format&fit=crop&w=900&q=60",
+        src: "images/kanto/fuji.jpg",
         alt: "Horizonte montanhoso",
         caption: "Interior",
       },
@@ -317,8 +317,8 @@ const STOPS = [
     city: "Tóquio",
     jp: "東京",
     region: "Kantō",
-    days: "14–19 abr",
-    dayLabel: "Dias 15–20",
+    days: "14–22 abr",
+    dayLabel: "Dias 15–23",
     coords: [139.6503, 35.6762],
     places: [
       "Shibuya",
@@ -327,17 +327,20 @@ const STOPS = [
       "Fuji (solo ou trilha)",
       "Dia livre",
       "Compras e eletrônicos",
+      "A preencher",
+      "A preencher",
+      "22 abr — ir embora",
     ],
     description:
-      "Seis dias para caber uma cidade que não cabe. Shibuya, o palácio caminhando até Shinjuku, Akihabara, um dia de Fuji, um dia livre, e o ritual das compras. O fim do mapa — e o começo da parte em que a gente já está cansado e feliz.",
+      "Nove dias para caber uma cidade que não cabe. Shibuya, o palácio caminhando até Shinjuku, Akihabara, um dia de Fuji, um dia livre, o ritual das compras, e dois dias ainda em branco. No dia 22, pelo calendário japonês, a gente vai embora.",
     photos: [
       {
-        src: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1200&q=70",
+        src: "images/kanto/tokyo-shibuya.jpg",
         alt: "Cruzamento de Shibuya",
         caption: "Shibuya",
       },
       {
-        src: "https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=1200&q=70",
+        src: "images/kanto/tokyo-night.jpg",
         alt: "Tóquio à noite",
         caption: "Tóquio",
       },
@@ -356,12 +359,12 @@ const STOPS = [
       "Um dia só para a montanha. Ainda vamos decidir se é trilha (Komosawa) ou se é só ficar olhando. Em abril o cume continua branco. De qualquer jeito, o mapa acende aqui.",
     photos: [
       {
-        src: "https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?auto=format&fit=crop&w=1200&q=70",
+        src: "images/kanto/fuji.jpg",
         alt: "Monte Fuji",
         caption: "Fuji-san",
       },
       {
-        src: "https://images.unsplash.com/photo-1528164344705-47542687000d?auto=format&fit=crop&w=900&q=60",
+        src: "images/chugoku/shrine.jpg",
         alt: "Paisagem ao redor do Fuji",
         caption: "O dia fora da cidade",
       },
