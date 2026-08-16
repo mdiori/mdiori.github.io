@@ -672,7 +672,7 @@ button {
 
 .place-modal header {
   position: relative;
-  padding-right: 88px;
+  padding-right: 44px;
 }
 
 .place-modal h3 {
@@ -684,14 +684,15 @@ button {
 
 .modal-close {
   position: absolute;
-  top: 0;
-  right: 0;
-  padding: 6px 10px;
-  border: 1px solid var(--paper-border);
+  top: -4px;
+  right: -6px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
   color: var(--muted);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.68rem;
+  font-size: 1.6rem;
+  line-height: 1;
 }
 
 .modal-close:hover,
